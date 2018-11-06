@@ -60,14 +60,12 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="새 주문"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="133dp" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
