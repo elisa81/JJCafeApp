@@ -23,16 +23,10 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="75dp">
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="52dp"
-            android:layout_height="50dp"
-            android:src="@drawable/burger1" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="93dp"
             android:gravity="center"
             android:text="테이블관리"
             android:textSize="30sp"

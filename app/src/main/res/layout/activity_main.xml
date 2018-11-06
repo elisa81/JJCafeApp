@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -25,16 +26,33 @@
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="52dp"
-            android:layout_height="50dp"
-            android:src="@drawable/burger1" />
+        <menu xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:context=".MainActivity">
+
+            <item
+                android:id="@+id/menu_login"
+                android:orderInCategory="100"
+                android:title="로그인" />
+
+            <item
+                android:id="@+id/menu_logout"
+                android:orderInCategory="100"
+                android:title="로그아웃" />
+
+            <item
+                android:id="@+id/menu_a"
+                android:orderInCategory="100"
+                android:title="다음" />
+
+        </menu>
+
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="72dp"
             android:gravity="center"
             android:text="주문관리"
             android:textSize="30sp"
@@ -113,14 +131,14 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/buttonSum"
                         android:layout_width="76dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="계산" />
 
                     <Button
-                        android:id="@+id/button4"
+                        android:id="@+id/buttonCancel"
                         android:layout_width="74dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -133,4 +151,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
