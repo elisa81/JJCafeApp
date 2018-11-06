@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().hide();
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button buttonNewOrder = (Button) findViewById(R.id.buttonNewOrder);
+        Button buttonNewOrder = (Button) findViewById(R.id.button);
         buttonNewOrder.setOnClickListener(new View.OnClickListener() {
 
             @Override
