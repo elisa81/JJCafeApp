@@ -34,17 +34,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="메뉴관리"
+            android:text="테이블관리"
             android:textSize="30sp"
             android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Input Menu Name" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +50,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Input Price" />
+                android:text="Input table Name" />
 
             <Button
                 android:id="@+id/button2"
@@ -77,26 +69,17 @@
             android:paddingTop="50dp">
 
             <EditText
-                android:id="@+id/editText2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="아메리카노" />
-
-            <EditText
                 android:id="@+id/editText3"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="1000원" />
+                android:text="T1" />
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="18dp"
+                android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="수정"
@@ -105,7 +88,7 @@
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                android:layout_width="106dp"
                 android:layout_height="wrap_content"
                 android:text="삭제"
                 tools:layout_editor_absoluteX="204dp"
