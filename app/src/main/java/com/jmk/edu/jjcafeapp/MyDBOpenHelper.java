@@ -4,13 +4,21 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class MyDBOpenHelper extends SQLiteOpenHelper {
-    private static final String name = "jjcafe.db";
-    private static final SQLiteDatabase.CursorFactory factory = null;
-    private static final int version = 1;
 
-    public MyDBOpenHelper(Context context) {
-        super(context, name, factory, version);
+
+public class MyDBOpenHelper extends SQLiteOpenHelper {
+
+    private static MyDBOpenHelper INSTANCE;
+    private static SQLiteDatabase mDB;
+
+
+
+    public static MyDBOpenHelper getINSTANCE(Context context, String name, SQLiteDatabase.CursorFactory factory,int version) {
+if(INSTANCE == null){
+    INSTANCE = new MyDBOpenHelper(context, name, factory, version);
+    mDB = INSTANCE.getWritableDatabase();
+}
+return INSTANCE;
     }
 
     public MyDBOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
@@ -45,6 +53,9 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE jjcafe_tableseat ;");
         onCreate(db);
     }
+
+
+
    /* public void deleteRecord(SQLiteDatabase mdb, String country) {
         mdb.execSQL("DELETE FROM jmk_country WHERE country='" + country + "';");
     }*/

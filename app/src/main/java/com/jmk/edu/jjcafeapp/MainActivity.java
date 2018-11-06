@@ -15,17 +15,17 @@ import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     MyDBOpenHelper dbHelper;
-    SQLiteDatabase mdb;
+
     Button buttonNewOrder,buttonCancel,buttonSum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
 
-    {
-        dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
-        mdb = dbHelper.getWritableDatabase();
-        super.onCreate(savedInstanceState);
+    {   super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
+
 
 
         ((Button) findViewById(R.id.buttonNewOrder)).setOnClickListener(this);
