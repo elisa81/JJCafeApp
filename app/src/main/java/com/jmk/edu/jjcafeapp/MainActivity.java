@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().hide();
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Button buttonNewOrder = (Button) findViewById(R.id.button);
         buttonNewOrder.setOnClickListener(new View.OnClickListener() {
