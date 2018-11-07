@@ -89,11 +89,11 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         TextView textViewOrder = (TextView) findViewById(R.id.textViewOrder);
         textViewOrder.setText(text);
 
-//        Bundle bundle = new Bundle();
-//        bundle.putString("Menu", text);
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtras(bundle);
-//        startActivity(intent);
+        Bundle bundle = new Bundle();
+        bundle.putString("Menu", text);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     @Override
