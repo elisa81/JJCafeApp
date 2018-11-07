@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     MyDBOpenHelper dbHelper;
     SQLiteDatabase mDB;
     Button buttonNewOrder;
-    ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
         mDB = dbHelper.getWritableDatabase();
 
-        String[] FRUITS = new String[] { "Apple", "Avocado", "Banana","Blueberry"};
-        listView = (ListView) findViewById(R.id.resultList);
-        ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<String>(this, R.layout.listview_single_column,FRUITS);
-        listView.setAdapter(arrayAdapter);
-        listView.setOnItemClickListener(this);
+
 
 
 
