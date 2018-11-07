@@ -12,18 +12,18 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
     private static SQLiteDatabase mDB;
 
 
-//    public static MyDBOpenHelper getInstance(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-//        if (INSTANCE == null) {
-//            INSTANCE = new MyDBOpenHelper(context, name, factory, version);
-//            mDB = INSTANCE.getWritableDatabase();
-//        }
-//        return INSTANCE;
-//    }
+    public static MyDBOpenHelper getInstance(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        if (INSTANCE == null) {
+            INSTANCE = new MyDBOpenHelper(context, name, factory, version);
+            mDB = INSTANCE.getWritableDatabase();
+        }
+        return INSTANCE;
+    }
 
     public MyDBOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
                           int version) {
         super(context, name, factory, version);
-        mDB = INSTANCE.getWritableDatabase();
+//        mDB = INSTANCE.getWritableDatabase();
     }
 
     @Override
