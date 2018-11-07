@@ -15,18 +15,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class OrderActivity extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener {
+public class OrderActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     MyDBOpenHelper dbHelper;
     SQLiteDatabase mdb;
-    Button buttonCancel,buttonInsert;
+    Button buttonCancel, buttonInsert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
-        mdb = dbHelper.getWritableDatabase();
-        Spinner spinner=(Spinner)findViewById(R.id.spinner);
+
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
         List<String> list = new ArrayList<String>();
         list.add("메뉴를 선택해주세요");
         list.add("아메리카노");
@@ -40,30 +40,27 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
         spinner.setAdapter(dataAdapter);
         spinner.setOnItemSelectedListener(this);
 
+        dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
+        mdb = dbHelper.getWritableDatabase();
+
     }
-
-
 
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.buttonInsert :
+        switch (v.getId()) {
+            case R.id.buttonInsert:
                 SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmssSSS");
                 String datetime = format.format(new Date());
-                mdb.execSQL("INSERT INTO jjcafe_ordered_list VALUES( '"+datetime+"', '', 'not-payed');");
+                mdb.execSQL("INSERT INTO jjcafe_ordered_list VALUES( '" + datetime + "', '', 'not-payed');");
 
-                Intent intent=null;
-                intent = new Intent(this,MainActivity.class);
+                Intent intent = null;
+                intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
-
                 break;
-            case R.id.buttonCancel :
 
-                Intent intent1=null;
-                intent1 = new Intent(this,MainActivity.class);
-                startActivity(intent1);
-
+            case R.id.buttonCancel:
+                finish();
                 break;
 
             default:

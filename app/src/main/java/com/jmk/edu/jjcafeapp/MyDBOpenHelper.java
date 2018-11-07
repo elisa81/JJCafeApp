@@ -8,28 +8,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDBOpenHelper extends SQLiteOpenHelper {
 
-    private static MyDBOpenHelper INSTANCE;
-    private static SQLiteDatabase mDB;
-
-
-    public static MyDBOpenHelper getInstance(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        if (INSTANCE == null) {
-            INSTANCE = new MyDBOpenHelper(context, name, factory, version);
-            mDB = INSTANCE.getWritableDatabase();
-        }
-        return INSTANCE;
-    }
 
     public MyDBOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
                           int version) {
         super(context, name, factory, version);
-//        mDB = INSTANCE.getWritableDatabase();
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-
         db.execSQL("CREATE TABLE jjcafe_menu (menu_seq integer PRIMARY KEY AUTOINCREMENT not null, menu_name TEXT, cost integer);");
         db.execSQL("INSERT INTO jjcafe_menu VALUES(null,'아메리카노',1000);");
         db.execSQL("INSERT INTO jjcafe_menu VALUES(null,'카페라떼',2000);");

@@ -19,6 +19,7 @@
         <activity android:name=".EditMenuActivity" />
         <activity android:name=".OrderListActivity" />
         <activity android:name=".EditTableActivity" />
+        <activity android:name=".OrderActivity" />
     </application>
 
 </manifest>
