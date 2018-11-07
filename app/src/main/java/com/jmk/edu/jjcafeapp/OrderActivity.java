@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,11 +21,22 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
     MyDBOpenHelper dbHelper;
     SQLiteDatabase mdb;
     Button buttonCancel, buttonInsert;
+    TextView textViewOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+
+        dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
+        mdb = dbHelper.getWritableDatabase();
+
+//        String[] FOODS = {"아메리카노", "카페라떼", "햄 토스트", "샌드위치", "스콘"};
+//        ListView listView = (ListView) findViewById(R.id.menuList);
+//
+//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_order, FOODS);
+//        listView.setAdapter(arrayAdapter);
+//        listView.setOnItemClickListener(this);
 
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -38,10 +51,11 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
                 new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
+
         spinner.setOnItemSelectedListener(this);
 
-        dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
-        mdb = dbHelper.getWritableDatabase();
+
+
 
     }
 
@@ -71,7 +85,15 @@ public class OrderActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        TextView textViewOrder = (TextView) findViewById(R.id.textViewOrder);
+        textViewOrder.setText(text);
 
+//        Bundle bundle = new Bundle();
+//        bundle.putString("Menu", text);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        intent.putExtras(bundle);
+//        startActivity(intent);
     }
 
     @Override
