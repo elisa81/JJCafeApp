@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         dbHelper = new MyDBOpenHelper(this, "jjcafe.db", null, 1);
 
-
-
         ((Button) findViewById(R.id.buttonNewOrder)).setOnClickListener(this);
         ((Button) findViewById(R.id.buttonSum)).setOnClickListener(this);
         ((Button) findViewById(R.id.buttonCancel)).setOnClickListener(this);
