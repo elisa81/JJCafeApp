@@ -60,60 +60,13 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="156dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="191dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="13/T1"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:text="아메리카노 1" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:text="총합 : 5000원" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="103dp"
-                    android:gravity="bottom"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/buttonSum"
-                        android:layout_width="76dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="계산" />
-
-                    <Button
-                        android:id="@+id/buttonCancel"
-                        android:layout_width="74dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="취소" />
-
-                </LinearLayout>
-            </LinearLayout>
-
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </LinearLayout>

@@ -5,6 +5,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class MyDBOpenHelper extends SQLiteOpenHelper {
 
@@ -25,7 +28,13 @@ public class MyDBOpenHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO jjcafe_menu VALUES(null,'샌드위치',3000);");
         db.execSQL("INSERT INTO jjcafe_menu VALUES(null,'스콘',1500);");
 
-        db.execSQL("CREATE TABLE jjcafe_ordered_list (ordered_list_seq text not null, ordered_count integer, payed_flag text);");
+        db.execSQL("CREATE TABLE jjcafe_ordered_list (ordered_list_seq text not null, menu_seq integer, TABLESEAT_SEQ integer, ordered_count integer, payed_flag text);");
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        String datetime = format.format(new Date());
+        db.execSQL("INSERT INTO jjcafe_ordered_list VALUES( '" + datetime + "', 1,2,1, 'not-payed');");
+        db.execSQL("INSERT INTO jjcafe_ordered_list VALUES( '" + datetime + "', 2,1,1, 'not-payed');");
+        db.execSQL("INSERT INTO jjcafe_ordered_list VALUES( '" + datetime + "', 5,3,1, 'not-payed');");
+
 
         db.execSQL("CREATE TABLE jjcafe_tableseat (TABLESEAT_SEQ integer not null);");
         db.execSQL("INSERT INTO jjcafe_tableseat VALUES(1);");
